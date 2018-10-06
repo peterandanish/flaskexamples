@@ -2,15 +2,16 @@ try:
     from flask_babelex import Domain
 
 except ImportError:
+    from flask_admin._compat import text_type
     def gettext(string, **variables):
-        return string % variables
+        return text_type(string % variables)
 
     def ngettext(singular, plural, num, **variables):
         variables.setdefault('num', num)
-        return (singular if num == 1 else plural) % variables
+        return text_type((singular if num == 1 else plural) % variables)
 
     def lazy_gettext(string, **variables):
-        return gettext(string, **variables)
+        return text_type(gettext(string, **variables))
 
     class Translations(object):
         ''' dummy Translations class for WTForms, no translation support '''
