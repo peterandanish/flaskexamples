@@ -28,7 +28,7 @@ class ConfigClass(object):
     MAIL_USE_SSL = True
     MAIL_USE_TLS = False
     MAIL_USERNAME = 'pgcdatadesigns@gmail.com'
-    MAIL_PASSWORD = 'Mothergoose1'
+    MAIL_PASSWORD = ''
     MAIL_DEFAULT_SENDER = '"MyApp" <pgcdatadesigns@gmail.com>'
 
     # Flask-User settings
